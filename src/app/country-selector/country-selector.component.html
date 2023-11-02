@@ -1,0 +1,50 @@
+<div class="container">
+    <h1>FootBall Update</h1>
+    <div class="menu-wrapper">
+        <button id="englandSelect" (click)="selectCountry(39)" [routerLink]="['/country', 39]" routerLinkActive="active"
+            [class.selected]="league === 39">England</button>
+        <button id="spainSelect" (click)="selectCountry(41)" [routerLink]="['/country', 41]" routerLinkActive="active"
+            [class.selected]="league === 41">Spain</button>
+        <button id="franceSelect" (click)="selectCountry(61)" [routerLink]="['/country', 61]" routerLinkActive="active"
+            [class.selected]="league === 61">France</button>
+        <button id="germanySelect" (click)="selectCountry(78)" [routerLink]="['/country', 78]" routerLinkActive="active"
+            [class.selected]="league === 78">Germany</button>
+        <button id="italySelect" (click)="selectCountry(135)" [routerLink]="['/country', 135]" routerLinkActive="active"
+            [class.selected]="league === 135">Italy</button>
+    </div>
+    <div *ngIf="isLoading; else showTable" class="loader">Loading...</div>
+    <ng-template #showTable>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Name</th>
+                        <th>Games</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>D</th>
+                        <th>Goal Difference</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let team of standings" (click)="goToTeamResults(team?.team?.id)" class="my-link">
+                        <td>{{ team?.rank }}</td>
+                        <td>
+                            <img [src]="team?.team?.logo" alt="Home Team Logo" height="50">
+                        </td>
+                        <td>{{ team?.team?.name }}</td>
+                        <td>{{ team?.all?.played }}</td>
+                        <td>{{ team?.all?.win }}</td>
+                        <td>{{ team?.all?.lose }}</td>
+                        <td>{{ team?.all?.draw }}</td>
+                        <td>{{ team?.goalsDiff }}</td>
+                        <td>{{ team?.points }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </ng-template>
+</div>

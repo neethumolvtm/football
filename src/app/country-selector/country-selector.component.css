@@ -1,0 +1,105 @@
+.menu {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 20%;
+}
+
+.menu button.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.selected {
+  background-color: #4caf50;
+  color: white;
+}
+
+table {
+  width: 50%;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: lightgrey;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
+.my-link {
+  color: blue; /* Change the color of the link text to blue */
+  text-decoration: none; /* Remove the underline from the link text */
+}
+
+.my-link:hover {
+  color: red; /* Change the color of the link text to red when hovering over the link */
+}
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table-container {
+  height: 500px;
+  overflow: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table-container th {
+  background-color: #f2f2f2;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.menu-wrapper {
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.menu-wrapper button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f2f2f2;
+}
+
+.menu-wrapper button.active {
+  background-color: #4caf50;
+  color: white;
+}
