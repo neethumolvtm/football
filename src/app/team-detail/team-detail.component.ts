@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FootballService } from '../football.service';
 
 import { ActivatedRoute } from '@angular/router';
-import { LoadingService } from '../loading.service';
-import { Fixture } from '../fixture.interface';
+import { Fixture } from '../sharing/interface/fixture.interface';
+import { FootballService } from '../sharing/service/football.service';
+import { LoadingService } from '../sharing/service/loading.service';
 
 @Component({
   selector: 'app-team-detail',

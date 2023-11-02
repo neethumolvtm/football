@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ApiInterceptor } from './api.interceptor';
-import { LoadingInterceptor } from './loading.interceptor';
 import { CountrySelectorComponent } from './country-selector/country-selector.component';
+import { ApiInterceptor } from './sharing/interceptor/api.interceptor';
+import { LoadingInterceptor } from './sharing/interceptor/loading.interceptor';
 @NgModule({
   declarations: [AppComponent, TeamDetailComponent, CountrySelectorComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],

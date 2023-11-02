@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FootballService } from '../football.service';
-import { LoadingService } from '../loading.service';
-import { Standing, Fixture1, Root } from '../standings.interface';
+import { Standing } from '../sharing/interface/standings.interface';
+import { LoadingService } from '../sharing/service/loading.service';
+import { FootballService } from '../sharing/service/football.service';
 
 @Component({
   selector: 'app-country-selector',

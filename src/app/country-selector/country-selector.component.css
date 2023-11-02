@@ -46,12 +46,12 @@ td {
   text-align: center;
 }
 .my-link {
-  color: blue; /* Change the color of the link text to blue */
-  text-decoration: none; /* Remove the underline from the link text */
+  color: blue;
+  text-decoration: none;
 }
 
 .my-link:hover {
-  color: red; /* Change the color of the link text to red when hovering over the link */
+  color: red;
 }
 th {
   font-weight: bold;

@@ -2,8 +2,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-import { Standing, Fixture1, Root } from './standings.interface';
-import { Fixture, RootData } from './fixture.interface';
+import { Root, Standing } from '../interface/standings.interface';
+import { Fixture, RootData } from '../interface/fixture.interface';
+
 @Injectable({
   providedIn: 'root',
 })

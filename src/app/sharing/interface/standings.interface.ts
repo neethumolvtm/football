@@ -1,22 +1,6 @@
 export interface Root {
   response: Response[];
 }
-export interface Fixture1 {
-  team: {
-    id: number;
-    logo: string;
-    name: string;
-  };
-  rank: number;
-  all: {
-    played: number;
-    win: number;
-    lose: number;
-    draw: number;
-  };
-  goalsDiff: number;
-  points: number;
-}
 
 export interface Parameters {
   league: string;
@@ -100,33 +84,4 @@ export interface Away {
 export interface Goals3 {
   for: number;
   against: number;
-}
-
-export interface Standings1 {
-  rank: number;
-  team: {
-    logo: string | undefined;
-    name: string | undefined;
-    id: number;
-  };
-  all: {
-    played: number | undefined;
-    win: number;
-    lose: number;
-    draw: number;
-  };
-  goalsDiff: number;
-  points: number;
-}
-
-export interface StandingsApiResponse1 {
-  data: {
-    response: [
-      {
-        league: {
-          standings: Standings1[];
-        };
-      }
-    ];
-  };
 }
