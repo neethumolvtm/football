@@ -3,6 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Standing } from '../sharing/interface/standings.interface';
 import { LoadingService } from '../sharing/service/loading.service';
 import { FootballService } from '../sharing/service/football.service';
+import {
+  COUNTRY_ENGLAND,
+  COUNTRY_FRANCE,
+  COUNTRY_GERMANY,
+  COUNTRY_ITALY,
+  COUNTRY_SPAIN,
+  CURRENT_YEAR,
+} from '../sharing/constant/constants';
 
 @Component({
   selector: 'app-country-selector',
@@ -13,10 +21,15 @@ export class CountrySelectorComponent implements OnInit {
   selectedCountry: number = 39;
   standings: Standing[] = [];
   standingsData = [];
-  currentYear: number;
+
   league!: number;
   currentUrl: string;
   isLoading: boolean | undefined;
+  englandSelect = COUNTRY_ENGLAND;
+  spainSelect = COUNTRY_SPAIN;
+  franceSelect = COUNTRY_FRANCE;
+  germanySelect = COUNTRY_GERMANY;
+  italySelect = COUNTRY_ITALY;
 
   constructor(
     private router: Router,
@@ -24,7 +37,6 @@ export class CountrySelectorComponent implements OnInit {
     private footballService: FootballService,
     public loadingService: LoadingService
   ) {
-    this.currentYear = new Date().getFullYear();
     this.route.params.subscribe((params) => {
       this.league = params['leagueId'];
     });
@@ -35,7 +47,7 @@ export class CountrySelectorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.selectCountry(this.league ? this.league : 39);
+    this.selectCountry(this.league ? this.league : COUNTRY_ENGLAND);
   }
 
   isMenuSelected(expectedUrl: string): boolean {
@@ -44,7 +56,7 @@ export class CountrySelectorComponent implements OnInit {
 
   selectCountry(id: number) {
     this.footballService
-      .getStandings(id, this.currentYear)
+      .getStandings(id, CURRENT_YEAR)
       .subscribe((data: Standing[]) => {
         this.standings = data;
       });

@@ -16,7 +16,7 @@ export class ApiInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<Object>> {
     request = request.clone({
       setHeaders: {
-        'x-rapidapi-key': '7a0f069bacaf7e92cd8425c1744396e1',
+        'x-rapidapi-key': 'e194015c5bd4bb6ec5b2d7370fa88699',
       },
     });
     return next.handle(request);

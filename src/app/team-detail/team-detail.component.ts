@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Fixture } from '../sharing/interface/fixture.interface';
 import { FootballService } from '../sharing/service/football.service';
 import { LoadingService } from '../sharing/service/loading.service';
+import { CURRENT_YEAR, LAST_TEN } from '../sharing/constant/constants';
 
 @Component({
   selector: 'app-team-detail',
@@ -15,15 +16,13 @@ export class TeamDetailComponent implements OnInit {
   fixtures!: Fixture[];
   leagueId!: number;
   teamId!: number;
-  currentYear: number;
-  isLoading: boolean = true;
+  isLoading: boolean | undefined;
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private footballService: FootballService,
     public loadingService: LoadingService
   ) {
-    this.currentYear = new Date().getFullYear();
     this.route.params.subscribe((params) => {
       this.leagueId = params['leagueId'];
       this.teamId = params['teamId'];
@@ -35,7 +34,7 @@ export class TeamDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.footballService
-      .getFixtures(this.leagueId, this.currentYear, this.teamId, 10)
+      .getFixtures(this.leagueId, CURRENT_YEAR, this.teamId, LAST_TEN)
       .subscribe((data: Fixture[]) => {
         this.fixtures = data;
       });

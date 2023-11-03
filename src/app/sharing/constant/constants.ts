@@ -1,0 +1,9 @@
+export const API_URL_STANDING = 'https://v3.football.api-sports.io/standings';
+export const API_URL_FIXTURES = 'https://v3.football.api-sports.io/fixtures';
+export const COUNTRY_ENGLAND = 39;
+export const COUNTRY_SPAIN = 140;
+export const COUNTRY_FRANCE = 61;
+export const COUNTRY_GERMANY = 78;
+export const COUNTRY_ITALY = 135;
+export const CURRENT_YEAR = new Date().getFullYear();
+export const LAST_TEN = 10;

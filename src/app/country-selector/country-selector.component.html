@@ -1,16 +1,16 @@
 <div class="container">
     <h1>FootBall Update</h1>
     <div class="menu-wrapper">
-        <button id="englandSelect" (click)="selectCountry(39)" [routerLink]="['/country', 39]" routerLinkActive="active"
-            [class.selected]="league === 39">England</button>
-        <button id="spainSelect" (click)="selectCountry(41)" [routerLink]="['/country', 41]" routerLinkActive="active"
-            [class.selected]="league === 41">Spain</button>
-        <button id="franceSelect" (click)="selectCountry(61)" [routerLink]="['/country', 61]" routerLinkActive="active"
-            [class.selected]="league === 61">France</button>
-        <button id="germanySelect" (click)="selectCountry(78)" [routerLink]="['/country', 78]" routerLinkActive="active"
-            [class.selected]="league === 78">Germany</button>
-        <button id="italySelect" (click)="selectCountry(135)" [routerLink]="['/country', 135]" routerLinkActive="active"
-            [class.selected]="league === 135">Italy</button>
+        <button id="englandSelect" (click)="selectCountry(englandSelect)" [routerLink]="['/country', englandSelect]"
+            routerLinkActive="active" [class.selected]="league === englandSelect">England</button>
+        <button id="spainSelect" (click)="selectCountry(spainSelect)" [routerLink]="['/country', spainSelect]"
+            routerLinkActive="active" [class.selected]="league === spainSelect">Spain</button>
+        <button id="franceSelect" (click)="selectCountry(franceSelect)" [routerLink]="['/country', franceSelect]"
+            routerLinkActive="active" [class.selected]="league === franceSelect">France</button>
+        <button id="germanySelect" (click)="selectCountry(germanySelect)" [routerLink]="['/country', germanySelect]"
+            routerLinkActive="active" [class.selected]="league === germanySelect">Germany</button>
+        <button id="italySelect" (click)="selectCountry(italySelect)" [routerLink]="['/country', italySelect]"
+            routerLinkActive="active" [class.selected]="league === italySelect">Italy</button>
     </div>
     <div *ngIf="isLoading; else showTable" class="loader">Loading...</div>
     <ng-template #showTable>
